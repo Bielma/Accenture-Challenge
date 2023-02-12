@@ -1,6 +1,7 @@
 import { Box, Grid, Tab, Tabs, Item } from "@mui/material";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { getPosts } from "../../services/api/posts";
 import "./Home.css";
 
 const json = `{
@@ -48,11 +49,22 @@ const json = `{
 
 const Home = () => {
   const [filter, setFilter] = useState("all");
-  const [posts, setPosts] = useState(JSON.parse(json).posts);
+  const [posts, setPosts] = useState([]);
   const handleChangeFilter = (e) => {
     setFilter(e.target.name);
   };
 
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const getData = async () => {
+    const data = await getPosts();
+
+    if (data.length) {
+      setPosts(data);
+    }
+  };
   return (
     <div>
       <div className="header">
@@ -105,7 +117,7 @@ const Home = () => {
           Work
         </button>{" "}
       </div>
-      <section className="postsGrid">
+      <section className="postsGrid mt-4">
         <Grid container spacing={0}>
           {posts?.map((post) => (
             <Grid item xs={12} sm={12} md={6} key={post.id}>
