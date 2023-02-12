@@ -4,49 +4,6 @@ import { Link } from "react-router-dom";
 import { getPosts } from "../../services/api/posts";
 import "./Home.css";
 
-const json = `{
-  "posts":[
-     {
-        "id":1,
-        "title":"Beach",
-        "img":"https://images.unsplash.com/photo-1674560435460-c266654fdc56?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY3NjIzMjE2Mw&ixlib=rb-4.0.3&q=80&w=1080",
-        "tag":"travel",
-        "description": "Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Quisque velit nisi, pretium ut lacinia in, elementum id enim.", 
-        "comments":[]
-     },
-     {
-        "id":2,
-        "title":"lorem insum",
-        "description": "Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Quisque velit nisi, pretium ut lacinia in, elementum id enim.", 
-        "img":"https://images.unsplash.com/photo-1674560435460-c266654fdc56?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY3NjIzMjE2Mw&ixlib=rb-4.0.3&q=80&w=1080",
-        "tag":"lifestyle",
-        "comments":[
-           
-        ]
-     },
-     {
-        "id":3,
-        "title":"Post 3",
-        "description": "Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Quisque velit nisi, pretium ut lacinia in, elementum id enim.", 
-        "img":"https://images.unsplash.com/photo-1674560435460-c266654fdc56?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY3NjIzMjE2Mw&ixlib=rb-4.0.3&q=80&w=1080",
-        "tag":"work",
-        "comments":[
-           
-        ]
-     },
-     {
-      "id":4,
-      "title":"Post 4",
-      "description": "Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Quisque velit nisi, pretium ut lacinia in, elementum id enim.", 
-      "img":"https://images.unsplash.com/photo-1674560435460-c266654fdc56?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY3NjIzMjE2Mw&ixlib=rb-4.0.3&q=80&w=1080",
-      "tag":"work",
-      "comments":[
-         
-      ]
-   }
-  ]
-}`;
-
 const Home = () => {
   const [filter, setFilter] = useState("all");
   const [posts, setPosts] = useState([]);
