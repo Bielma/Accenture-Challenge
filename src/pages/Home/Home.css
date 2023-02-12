@@ -13,7 +13,9 @@
 .filters > button.selected {
   background-color: rgb(192, 192, 192);
 }
-
+.postsGrid {
+  padding: 26px;
+}
 .post {
   position: relative;
   min-width: 420px;
