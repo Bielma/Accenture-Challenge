@@ -33,42 +33,42 @@ const Home = () => {
       <div className="filters row">
         <button
           name="all"
-          className={filter === "all" && "selected"}
+          className={filter === "all" ? "selected" : ""}
           onClick={handleChangeFilter}
         >
           All
         </button>
         <button
           name="travel"
-          className={filter === "travel" && "selected"}
+          className={filter === "travel" ? "selected" : ""}
           onClick={handleChangeFilter}
         >
           Travel
         </button>
         <button
           name="lifestyle"
-          className={filter === "lifestyle" && "selected"}
+          className={filter === "lifestyle" ? "selected" : ""}
           onClick={handleChangeFilter}
         >
           Lifestyle
         </button>
         <button
           name="business"
-          className={filter === "business" && "selected"}
+          className={filter === "business" ? "selected" : ""}
           onClick={handleChangeFilter}
         >
           Business
         </button>
         <button
           name="food"
-          className={filter === "food" && "selected"}
+          className={filter === "food" ? "selected" : ""}
           onClick={handleChangeFilter}
         >
           Food
         </button>
         <button
           name="work"
-          className={filter === "work" && "selected"}
+          className={filter === "work" ? "selected" : ""}
           onClick={handleChangeFilter}
         >
           Work
