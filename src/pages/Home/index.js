@@ -7,6 +7,7 @@ import "./Home.css";
 const Home = () => {
   const [filter, setFilter] = useState("all");
   const [posts, setPosts] = useState([]);
+
   const handleChangeFilter = (e) => {
     setFilter(e.target.name);
   };
@@ -14,6 +15,16 @@ const Home = () => {
   useEffect(() => {
     getData();
   }, []);
+  useEffect(() => {
+    const update = async () => {
+      await getData();
+      if (filter !== "all") {
+        setPosts(posts.filter((p) => p.tag === filter));
+      }
+    };
+
+    update();
+  }, [filter]);
 
   const getData = async () => {
     const data = await getPosts();
